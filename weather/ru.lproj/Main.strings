@@ -1,0 +1,68 @@
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "3mj-n5-BlS"; */
+"3mj-n5-BlS.text" = "Label";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "44N-GE-4kv"; */
+"44N-GE-4kv.normalTitle" = "Button";
+
+/* Class = "UILabel"; text = "Presure:"; ObjectID = "Aam-kt-EUA"; */
+"Aam-kt-EUA.text" = "Presure:";
+
+/* Class = "UIButton"; configuration.title = "find city"; ObjectID = "EGy-DL-M2C"; */
+"EGy-DL-M2C.configuration.title" = "Найти город";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "EGy-DL-M2C"; */
+"EGy-DL-M2C.normalTitle" = "Button";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "GGZ-m6-OTn"; */
+"GGZ-m6-OTn.text" = "Label";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "PKB-eS-SGI"; */
+"PKB-eS-SGI.text" = "Label";
+
+/* Class = "UILabel"; text = "Please Waiting..."; ObjectID = "Tk9-Su-vQg"; */
+"Tk9-Su-vQg.text" = "Идёт загрузка...";
+
+/* Class = "UIButton"; disabledTitle = "Daily Forecast"; ObjectID = "TyA-GH-y0Z"; */
+"TyA-GH-y0Z.disabledTitle" = "Прогноз на 24 часа";
+
+/* Class = "UIButton"; normalTitle = "Daily forecast"; ObjectID = "TyA-GH-y0Z"; */
+"TyA-GH-y0Z.normalTitle" = "Прогноз на 24 часа";
+
+/* Class = "UIButton"; selectedTitle = "Daily forecast"; ObjectID = "TyA-GH-y0Z"; */
+"TyA-GH-y0Z.selectedTitle" = "Прогноз на 24 часа";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "Vbg-e6-W8i"; */
+"Vbg-e6-W8i.text" = "Label";
+
+/* Class = "UILabel"; text = "Feels like:"; ObjectID = "as9-NZ-Qkr"; */
+"as9-NZ-Qkr.text" = "Ощущается как:";
+
+/* Class = "UILabel"; text = "Time Loading"; ObjectID = "fQO-1P-GZL"; */
+"fQO-1P-GZL.text" = "Идёт загрузка...";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "fwb-bw-uPT"; */
+"fwb-bw-uPT.text" = "Label";
+
+/* Class = "UILabel"; text = "No Internet Connection"; ObjectID = "gWy-Fe-Cq5"; */
+"gWy-Fe-Cq5.text" = "No Internet Connection";
+
+/* Class = "UIButton"; configuration.title = "Button"; ObjectID = "gqm-u5-vn3"; */
+"gqm-u5-vn3.configuration.title" = "Button";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "gqm-u5-vn3"; */
+"gqm-u5-vn3.normalTitle" = "Button";
+
+/* Class = "UILabel"; text = "0 C"; ObjectID = "m5n-xl-1hU"; */
+"m5n-xl-1hU.text" = "0 C";
+
+/* Class = "UILabel"; text = "Wind:"; ObjectID = "tO4-Kc-QDg"; */
+"tO4-Kc-QDg.text" = "Скорость ветра:";
+
+/* Class = "UIButton"; normalTitle = "Forecast for five days"; ObjectID = "uwk-TE-Q5d"; */
+"uwk-TE-Q5d.normalTitle" = "Прогноз на 5 дней";
+
+/* Class = "UIButton"; selectedTitle = "Forecast for five days"; ObjectID = "uwk-TE-Q5d"; */
+"uwk-TE-Q5d.selectedTitle" = "Прогноз на 5 дней";
+
+"L0Z-ax-Ww1.placeholder" = "Укажите город на английском";

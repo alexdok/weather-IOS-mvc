@@ -1,0 +1,77 @@
+/* 
+  Localizable.strings
+  weather
+
+  Created by алексей ганзицкий on 22.11.2022.
+  
+*/
+"Feels Like: " = "Feels Like: " ;
+"Wind: " = "Wind: " ;
+"Presure: " = "Presure: " ;
+"Moscow" = "Moscow" ;
+"Voronezh" = "Voronezh" ;
+"Minsk" = "Minsk" ;
+"Abidjan" = "Abidjan" ;
+"Adana" = "Adana" ;
+"Addis Ababa" = "Addis Ababa" ;
+"Adelaide" = "Adelaide" ;
+"Accra" = "Accra" ;
+"Aktyubinsk" = "Aktyubinsk" ;
+"Alexandria" = "Alexandria" ;
+"Algiers" = "Algiers" ;
+"Almaty" = "Almaty" ;
+"Amsterdam" = "Amsterdam" ;
+"Ankara" = "Ankara" ;
+"Antalya" = "Antalya" ;
+"Antananarivo" = "Antananarivo" ;
+"Antwerp" = "Antwerp" ;
+"Anshan" = "Anshan" ;
+"Ahmedabad" = "Ahmedabad" ;
+"Astana" = "Astana" ;
+"Asuncion" = "Asuncion" ;
+"Athens" = "Athens" ;
+"Ashgabat" = "Ashgabat" ;
+"Nizhny Novgorod" = "Nizhny Novgorod" ;
+
+"москва" = "Moscow" ;
+"воронеж" = "Voronezh" ;
+"минск" = "Minsk" ;
+"анкара" = "Ankara";
+"абиджан" = "Abidjan";
+"адана" = "Adana";
+"аддис-Абеба" = "Addis Ababa";
+"аделаида" = "Adelaide";
+"аккра" = "Accra";
+"актюбинск" = "Aktyubinsk";
+"александрия" = "Alexandria";
+"алжир" = "Algiers";
+"алма-Ата" = "Almaty";
+"амстердам" = "Amsterdam";
+"анкара" = "Ankara";
+"анталья" = "Antalya";
+"антананариву" = "Antananarivo";
+"антверпен" = "Antwerp";
+"аньшань" = "Anshan";
+"ахмадабад" = "Ahmedabad";
+"астана" = "Astana";
+"асунсьон" = "Asuncion";
+"афины" = "Athens";
+"ашхабад" = "Ashgabat";
+"нижний новгород" = "Nizhny Novgorod";
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

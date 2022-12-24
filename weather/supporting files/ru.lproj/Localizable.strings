@@ -1,0 +1,534 @@
+/* 
+  Localizable.strings
+  weather
+
+  Created by алексей ганзицкий on 22.11.2022.
+  
+*/
+"Feels Like: " = "По ощущениям: " ;
+"Wind: " = "Скорость ветра: " ;
+"Presure: " = "Давление: " ;
+
+"Moscow" = "Москва" ;
+"Voronezh" = "Воронеж" ;
+"Minsk" = "Минск" ;
+"Ankara" = "Анкара";
+"Abidjan" = "Абиджан" ;
+"Adana" = "Адана" ;
+"Addis Ababa" = "Аддис-Абеба" ;
+"Adelaide" = "Аделаида" ;
+"Accra" = "Аккра" ;
+"Aktyubinsk" = "Актюбинск" ;
+"Alexandria" = "Александрия" ;
+"Algiers" = "Алжир" ;
+"Almaty" = "Алма-Ата" ;
+"Amsterdam" = "Амстердам" ;
+"Ankara" = "Анкара" ;
+"Antalya" = "Анталья" ;
+"Antananarivo" = "Антананариву" ;
+"Antwerp" = "Антверпен" ;
+"Anshan" = "Аньшань" ;
+"Ahmedabad" = "Ахмадабад" ;
+"Astana" = "Астана" ;
+"Asuncion" = "Асунсьон" ;
+"Athens" = "Афины" ;
+"Ashgabat" = "Ашхабад" ;
+"Nizhny Novgorod" = "Нижний Новгород" ;
+
+"москва" = "Moscow" ;
+"воронеж" = "Voronezh" ;
+"минск" = "Minsk" ;
+"анкара" = "Ankara";
+"абиджан" = "Abidjan";
+"адана" = "Adana";
+"аддис-Абеба" = "Addis Ababa";
+"аделаида" = "Adelaide";
+"аккра" = "Accra";
+"актюбинск" = "Aktyubinsk";
+"александрия" = "Alexandria";
+"алжир" = "Algiers";
+"алма-Ата" = "Almaty";
+"амстердам" = "Amsterdam";
+"анкара" = "Ankara";
+"анталья" = "Antalya";
+"антананариву" = "Antananarivo";
+"антверпен" = "Antwerp";
+"аньшань" = "Anshan";
+"ахмадабад" = "Ahmedabad";
+"астана" = "Astana";
+"асунсьон" = "Asuncion";
+"афины" = "Athens";
+"ашхабад" = "Ashgabat";
+"нижний новгород" = "Nizhny Novgorod";
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+
+ Багдад    Baghdad
+ Базель    Basel
+ Баку    Baku
+ Бангалор    Bangalore
+ Бангкок    Bangkok
+ Бандунг    Bandung
+ Барранкилья    Barranquilla
+ Барселона    Barcelona
+ Батуми    Batumi
+ Бейрут    Beirut
+ Белград    Belgrade
+ Белу-Оризонти    Belo Horizonte
+ Берлин    Berlin
+ Бирмингем    Birmingham
+ Берн    Berne
+ Бишкек    Bishkek
+ Бобруйск    Babruysk, Bobruysk
+ Богота    Bogota
+ Бордо    Bordeaux
+ Бразилиа    Brasilia
+ Братислава    Bratislava
+ Брест    Brest
+ Брисбен    Brisbane
+ Будапешт    Budapest
+ Бухара    Bukhara
+ Бухарест    Bucharest
+ Буэнос-Айрес    Buenos Aires
+ Бхопал    Bhopal
+ В
+ Валенсия    Valencia
+ Варна    Varna
+ Варшава    Warsaw
+ Вашингтон    Washington
+ Веллингтон    Wellington
+ Вена    Vienna
+ Венеция    Venice
+ Вильнюс    Vilnius
+ Витебск    Vitebsk
+ Г
+ Гаага    The Hague
+ Гавана    Havana
+ Гамбург    Hamburg
+ Гаосюн    Kaohsiung
+ Гвадалахара    Guadalajara
+ Гватемала    Guatemala
+ Гданьск    Gdansk
+ Гент    Ghent
+ Гётеборг    Gothenburg
+ Гирин    Jilin
+ Глазго    Glasgow
+ Гомель    Gomel
+ Гродно    Grodno, Hrodna
+ Гуанчжоу    Guangzhou
+ Гуйян    Guiyang
+ Гуаякиль    Guayaquil
+ Д
+ Дакар    Dakar
+ Дакка    Dhaka, Dacca
+ Даллас    Dallas
+ Далянь    Dalian
+ Дамаск    Damascus
+ Дар-эс-Салам    Dar es Salaam
+ Дели    Delhi
+ Джайпур    Jaipur
+ Джакарта    Jakarta
+ Днепропетровск    Dnipropetrovsk
+ Донецк    Donetsk
+ Дрезден    Dresden
+ Дублин    Dublin
+ Дуала    Douala
+ Душанбе    Dushanbe
+ Дюссельдорф    Duesseldorf
+ Е
+ Ереван    Yerevan
+ Ж
+ Женева    Geneva
+ Житомир    Zhytomyr
+ З
+ Загреб    Zagreb
+ Запорожье    Zaporizhia
+ И
+ Иерусалим    Jerusalem
+ Индаур    Indore
+ Ибадан    Ibadan
+ Измир    Izmir
+ Инсбрук    Innsbruck
+ Инчхон    Incheon
+ Иокогама    Yokohama
+ Исламабад    Islamabad
+ Исфахан    Esfahan
+ К
+ Кавасаки    Kawasaki
+ Каир    Cairo
+ Кали    Santiago de Cali
+ Калькутта    Calcutta
+ Канны, Канн    Cannes
+ Канпур    Kanpur
+ Каракас    Caracas
+ Караганда    Karaganda
+ Карачи    Karachi
+ Карловы Вары    Karlovy Vary
+ Касабланка    Casablanca
+ Каунас    Kaunas
+ Кванджу    Gwangju
+ Кёльн    Cologne
+ Кесон-Сити    Quezon City
+ Киев    Kiev
+ Киншаса    Kinshasa
+ Киото    Kyoto
+ Кито    Quito
+ Кишинёв    Kishinev
+ Клайпеда    Klaipeda
+ Кобе    Kobe
+ Конакри    Conakry
+ Копенгаген    Copenhagen
+ Кордова    Cordoba
+ Краков    Krakow
+ Куала-Лумпур    Kuala Lumpur
+ Куньмин    Kunming
+ Л
+ Лагос    Lagos
+ Лакхнау    Lucknow
+ Ланьчжоу    Lanzhou
+ Лахор    Lahore
+ Лейпциг    Leipzig
+ Ливерпуль    Liverpool
+ Лима    Lima
+ Лимассол    Limassol
+ Лион    Lyons
+ Лиссабон    Lisbon
+ Лозанна    Lausanne
+ Лондон    London
+ Лос-Анджелес    Los Angeles
+ Луанда    Luanda
+ Львов    Lviv
+ Люксембург    Luxembourg
+ М
+ Мадрид    Madrid
+ Манаус    Manaus
+ Манила    Manila
+ Мапуту    Maputo
+ Маракайбо    Maracaibo
+ Марсель    Marseilles
+ Медан    Medan
+ Медельин    Medellin
+ Мельбурн    Melbourne
+ Мехико    Mexico
+ Мешхед    Mashhad
+ Милан    Milan
+ Минск    Minsk
+ Могилёв    Mahilyow
+ Монреаль    Montreal
+ Монтевидео    Montevideo
+ Монтеррей    Monterrey
+ Мумбаи    Mumbai
+ Мюнхен    Munich
+ Н
+ Нагоя    Nagoya
+ Нагпур    Nagpur
+ Найроби    Nairobi
+ Нанкин    Nanjing
+ Наньчан    Nanchang
+ Нарва    Narva
+ Неаполь    Naples
+ Никосия    Nicosia
+ Нью-Йорк    New York
+ О
+ Одесса    Odessa
+ Осака    Osaka
+ Осло    Oslo
+ Оттава    Ottawa
+ П
+ Палембанг    Palembang
+ Париж    Paris
+ Пекин    Beijing
+ Перт    Perth
+ Познань    Poznan
+ Порту-Алегри    Porto Alegre
+ Потсдам    Potsdam
+ Прага    Prague
+ Пуна    Pune
+ Пусан    Busan
+ Пхеньян    Pyongyang
+ Р
+ Ресифи    Recife
+ Рига    Riga
+ Рим    Rome
+ Рио-де-Жанейро    Rio (de) Janeiro
+ Роттердам    Rotterdam
+ С
+ Салвадор    Salvador
+ Самарканд    Samarkand
+ Сан-Диего    San Diego
+ Сан-Паулу    Sao Paulo
+ Сан-Франциско    San Francisco
+ Санто-Доминго    Santo Domingo
+ Сантьяго    Santiago
+ Саппоро    Sapporo
+ Севастополь    Sevastopol
+ Сеул    Seoul
+ Сиань    Xi'an
+ Сидней    Sydney
+ Симферополь    Simferopol
+ Сингапур    Singapore
+ Солт-Лейк-Сити    Salt Lake City
+ София    Sofia
+ Стамбул    Istanbul
+ Сурабая    Surabaya
+ Сурат    Surat
+ Т
+ Тайбэй    Taipei
+ Тайюань    Taiyuan
+ Таллин (Таллинн)    Tallinn
+ Таншань    Tangshan
+ Тарту    Tartu
+ Ташкент    Tashkent
+ Тбилиси    Tbilisi
+ Тебриз    Tabriz
+ Тегеран    Teh(e)ran
+ Тель-Авив    Tel Aviv
+ Тирасполь    Tiraspol
+ Токио    Tokyo
+ Торонто    Toronto
+ Тулуза    Toulouse
+ Тэгу    Daegu, Taegu
+ Тэджон    Daejeon
+ Тяньцзинь    Tianjin
+ У
+ Урумчи    Urumchi
+ Утрехт    Utrecht
+ Ухань    Wuhan
+ Ф
+ Филадельфия    Philadelphia
+ Финикс    Phoenix
+ Флоренция    Florence
+ Франкфурт-на-Майне    Frankfort on the Main
+ Франкфурт-на-Одере    Frankfort on the Oder
+ Фукуока    Fukuoka
+ Фушунь    Fushun
+ Х
+ Хайфа    Haifa
+ Халеб    Aleppo
+ Ханой    Hanoi
+ Ханчжоу    Hangzhou
+ Хараре    Harare
+ Харбин    Harbin
+ Харьков    Kharkiv
+ Хельсинки    Helsinki
+ Хиросима    Hiroshima
+ Хошимин    Ho Chi Minh
+ Хьюстон    Houston
+ Ц
+ Цзинань    Jinan
+ Цзыбо    Zibo
+ Циндао    Qingdao
+ Цицикар    Qiqihar
+ Цюрих    Zurich
+ Ч
+ Чаньчунь    Changchun
+ Чанша    Changsha
+ Чикаго    Chicago
+ Читтагонг    Chittagong
+ Чунцин    Chongqing
+ Чэнду    Chengdu
+ Ш
+ Шанхай    Shanghai
+ Шымкент    Shymkent
+ Шэньян    Shenyang
+ Щ
+ Щецин    Szczecin
+ Э
+ Эйлат    Eilat
+ Эйндховен    Eindhoven
+ Эль-Гиза    Giza
+ Эль-Кувейт    Kuwait
+ Эр-Рияд    Riyadh
+ Ю
+ Юрмала    Jurmala
+ Я
+ Янгон    Yangon, Rangoon
+  
+ россия
+ А
+ Абакан    Abakan
+ Альметьевск    Almetyevsk
+ Анадырь    Anadyr
+ Анапа    Anapa
+ Архангельск    Arkhangelsk
+ Астрахань    Astrakhan
+ Б
+ Барнаул    Barnaul
+ Белгород    Belgorod
+ Беслан    Beslan
+ Бийск    Biysk
+ Биробиджан    Birobidzhan
+ Благовещенск    Blagoveshchensk
+ Бологое    Bologoye
+ Брянск    Bryansk
+ В
+ Великий Новгород    Veliky Novgorod
+ Великий Устюг    Veliky Ustyug
+ Владивосток    Vladivostok
+ Владикавказ    Vladikavkaz
+ Владимир    Vladimir
+ Волгоград    Volgograd
+ Вологда    Vologda
+ Воркута    Vorkuta
+ Воронеж    Voronezh
+ Г
+ Гатчина    Gatchina
+ Гдов    Gdov
+ Геленджик    Gelendzhik
+ Горно-Алтайск    Gorno-Altaysk
+ Грозный    Grozny
+ Гудермес    Gudermes
+ Гусь-Хрустальный    Gus-Khrustalny
+ Д
+ Дзержинск    Dzerzhinsk
+ Дмитров    Dmitrov
+ Дубна    Dubna
+ Е
+ Ейск    Yeysk
+ Екатеринбург    Yekaterinburg
+ Елабуга    Yelabuga
+ Елец    Yelets
+ Ессентуки    Yessentuki
+ З
+ Златоуст    Zlatoust
+ И
+ Иваново    Ivanovo
+ Ижевск    Izhevsk
+ Иркутск    Irkutsk
+ Й
+ Йошкар-Ола    Yoshkar-Ola
+ К
+ Казань    Kazan
+ Калининград    Kaliningrad
+ Калуга    Kaluga
+ Кемерово    Kemerovo
+ Кисловодск    Kislovodsk
+ Комсомольск-на-Амуре    Komsomolsk-on-Amur
+ Котлас    Kotlas
+ Краснодар    Krasnodar
+ Красноярск    Krasnoyarsk
+ Курган    Kurgan
+ Курск    Kursk
+ Кызыл    Kyzyl
+ Л
+ Лениногорск    Leninogorsk
+ Ленск    Lensk
+ Липецк    Lipetsk
+ Луга    Luga
+ Любань    Lyuban
+ Люберцы    Lyubertsy
+ М
+ Магадан    Magadan
+ Майкоп    Maykop
+ Махачкала    Makhachkala
+ Миасс    Miass
+ Минеральные Воды    Mineralnye Vody
+ Мирный    Mirny
+ Москва    Moscow
+ Мурманск    Murmansk
+ Муром    Murom
+ Мытищи    Mytishchi
+ Н
+ Набережные Челны    Naberezhnye Chelny
+ Надым    Nadym
+ Нальчик    Nalchik
+ Назрань    Nazran
+ Нарьян-Мар    Naryan-Mar
+ Находка    Nakhodka
+ Нижневартовск    Nizhnevartovsk
+ Нижнекамск    Nizhnekamsk
+ Нижний Новгород    Nizhny Novgorod
+ Нижний Тагил    Nizhny Tagil
+ Новокузнецк    Novokuznetsk
+ Новосибирск    Novosibirsk
+ Новый Уренгой    Novy Urengoy
+ Норильск    Norilsk
+ О
+ Обнинск    Obninsk
+ Октябрьский    Oktyabrsky
+ Омск    Omsk
+ Оренбург    Orenburg
+ Орехово-Зуево    Orekhovo-Zuyevo
+ Орёл    Oryol
+ П
+ Пенза    Penza
+ Пермь    Perm
+ Петрозаводск    Petrozavodsk
+ Петропавловск-Камчатский    Petropavlovsk-Kamchatsky
+ Подольск    Podolsk
+ Псков    Pskov
+ Пятигорск    Pyatigorsk
+ Р
+ Ростов-на-Дону    Rostov-on-Don
+ Рыбинск    Rybinsk
+ Рязань    Ryazan
+ С
+ Салехард    Salekhard
+ Самара    Samara
+ Санкт-Петербург    Saint Petersburg
+ Саранск    Saransk
+ Саратов    Saratov
+ Северодвинск    Severodvinsk
+ Смоленск    Smolensk
+ Соль-Илецк    Sol-Iletsk
+ Сочи    Sochi
+ Ставрополь    Stavropol
+ Сургут    Surgut
+ Сыктывкар    Syktyvkar
+ Т
+ Тамбов    Tambov
+ Тверь    Tver
+ Тобольск    Tobolsk
+ Тольятти    Tolyatti
+ Томск    Tomsk
+ Туапсе    Tuapse
+ Тула    Tula
+ Тында    Tynda
+ Тюмень    Tyumen
+ У
+ Улан-Уде    Ulan-Ude
+ Ульяновск    Ulyanovsk
+ Уфа    Ufa
+ Х
+ Хабаровск    Khabarovsk
+ Ханты-Мансийск    Khanty-Mansiysk
+ Ч
+ Чебаркуль    Chebarkul
+ Чебоксары    Cheboksary
+ Челябинск    Chelyabinsk
+ Череповец    Cherepovets
+ Черкесск    Cherkessk
+ Чистополь    Chistopol
+ Чита    Chita
+ Ш
+ Шадринск    Shadrinsk
+ Шатура    Shatura
+ Шуя    Shuya
+ Э
+ Элиста    Elista
+ Энгельс    Engels
+ Ю
+ Южно-Сахалинск    Yuzhno-Sakhalinsk
+ Я
+ Якутск    Yakutsk
+ Ярославль    Yaroslavl
+ 
+ 
+ 
+ */
