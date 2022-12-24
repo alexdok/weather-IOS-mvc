@@ -28,7 +28,6 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         didSet {
             DispatchQueue.main.async {
                 self.cityLable.text = self.curentData.city.localized()
-//                self.viewModel.setLableCity()
                 SaveSettingsManager.shared.saveCurentCity(curentCity: self.curentData.city)
                 self.tempLable.text = " \(self.curentData.temp)°C"
                 self.feelsLikeLable.text = self.feelsLikeLableText.localized() + "\(self.curentData.tempFeelsLike)°C"
@@ -73,7 +72,6 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-//        viewModel.sendRequestForCurentTemp()
         self.connectWithServer()
     }
     
