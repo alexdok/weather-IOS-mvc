@@ -2,7 +2,9 @@
 import UIKit
 
 class ActivityIndicator: UIView {
+    
     var spinner: UIView?
+    
     func showLoading(onView: UIView) {
         let spinnerView = UIView(frame: onView.bounds)
         spinnerView.backgroundColor = .gray
@@ -16,6 +18,7 @@ class ActivityIndicator: UIView {
         }
         spinner = spinnerView
     }
+    
     func hideLoading() {
         DispatchQueue.main.async {
             self.spinner?.removeFromSuperview()

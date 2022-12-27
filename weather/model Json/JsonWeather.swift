@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct JsonWeatherDecoder: Decodable {
+struct JsonWeather: Decodable {
     let current: Current?
     let location: Location?
     let forecast: Forecast?
@@ -18,11 +18,13 @@ struct Errors: Decodable {
     let code: Int
     let message: String
 }
+
 struct Location: Decodable{
     let name: String
     let localtime: String
     
 }
+
 struct Current: Decodable {
     let lastUpdated: String
     let tempC: Double
@@ -31,7 +33,6 @@ struct Current: Decodable {
     let windMph: Double
     let pressureIn: Double
     let condition: Condition
-    
     enum CodingKeys: String, CodingKey {
         case condition
         case pressureIn = "pressure_in"
@@ -68,13 +69,13 @@ struct ForecastDayArrayDay: Decodable {
     let avgtempC: Double
     let avgtempF: Double
     let condition: ConditonDay
-    
     enum CodingKeys: String, CodingKey {
         case condition
         case avgtempC = "avgtemp_c"
         case avgtempF = "avgtemp_f"
     }
 }
+
 struct ConditonDay: Decodable {
     let icon: String
 }
@@ -83,5 +84,4 @@ struct Condition : Decodable {
     let text: String
     let icon: String
     let code: Int
-
 }

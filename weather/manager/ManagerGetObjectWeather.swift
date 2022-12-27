@@ -7,12 +7,13 @@
 
 import Foundation
 
-class Manager {
-    static var shared = Manager()
-    private var object = ObjectWeAreWorkingWith()
+class ManagerGetObjectWeather {
+    
+    static var shared = ManagerGetObjectWeather()
+    private var object = ObjectWeatherData()
     private init() {}
     
-    func getObjectJsone() -> ObjectWeAreWorkingWith {
+    func getObjectJsone() -> ObjectWeatherData {
         let getObject = object
         return getObject
     }

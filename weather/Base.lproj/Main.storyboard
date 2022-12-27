@@ -99,9 +99,9 @@
                                                 </collectionViewCellContentView>
                                                 <size key="customSize" width="128" height="128"/>
                                                 <connections>
-                                                    <outlet property="dateLable" destination="Vbg-e6-W8i" id="7ux-Jx-P4P"/>
+                                                    <outlet property="dateLabel" destination="Vbg-e6-W8i" id="7ux-Jx-P4P"/>
                                                     <outlet property="iconImage" destination="Fhm-oh-6kY" id="iJH-uF-WIy"/>
-                                                    <outlet property="tempLable" destination="fwb-bw-uPT" id="FBB-nQ-SvD"/>
+                                                    <outlet property="tempLabel" destination="fwb-bw-uPT" id="FBB-nQ-SvD"/>
                                                 </connections>
                                             </collectionViewCell>
                                         </cells>
@@ -172,8 +172,8 @@
                                                 <size key="customSize" width="145" height="128"/>
                                                 <connections>
                                                     <outlet property="iconImage" destination="2Q9-iQ-73b" id="VR9-VB-RDl"/>
-                                                    <outlet property="tempLable" destination="PKB-eS-SGI" id="1pb-gZ-g8c"/>
-                                                    <outlet property="timeLable" destination="GGZ-m6-OTn" id="pJy-KR-mSI"/>
+                                                    <outlet property="tempLabel" destination="PKB-eS-SGI" id="1pb-gZ-g8c"/>
+                                                    <outlet property="timeLabel" destination="GGZ-m6-OTn" id="pJy-KR-mSI"/>
                                                 </connections>
                                             </collectionViewCell>
                                         </cells>
@@ -200,7 +200,7 @@
                                             <imageReference key="image" image="diamond.bottomhalf.filled" catalog="system"/>
                                         </state>
                                         <connections>
-                                            <action selector="dailyForecastHideOrNotButtonPrassed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Xo6-Uf-mZR"/>
+                                            <action selector="dailyForecastHideOrNotButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="o1k-jX-jd1"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uwk-TE-Q5d">
@@ -223,7 +223,7 @@
                                             <color key="titleShadowColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <connections>
-                                            <action selector="forecastForFiveDaysHideOrNotButtonPrassed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="efy-vx-Y9h"/>
+                                            <action selector="forecastForFiveDaysHideOrNotButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Th4-bT-OTH"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -411,7 +411,7 @@
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="gray" title="My CIty"/>
                                         <connections>
-                                            <action selector="myCityLocationButtonPrassed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Xe0-8D-wn2"/>
+                                            <action selector="myCityLocationButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="tIy-Vl-F9O"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -469,29 +469,29 @@
                     <connections>
                         <outlet property="background" destination="hW5-ch-n9n" id="5ie-oO-Pdd"/>
                         <outlet property="changeCityTable" destination="s4U-sJ-z7h" id="Mbw-xi-0gH"/>
-                        <outlet property="cityLable" destination="Tk9-Su-vQg" id="rAU-eE-I2z"/>
+                        <outlet property="cityLabel" destination="Tk9-Su-vQg" id="rAU-eE-I2z"/>
                         <outlet property="containerForColectionViewHours" destination="iek-VY-tld" id="mle-ak-HMm"/>
                         <outlet property="containerForCollectionView" destination="XBb-Yf-WIb" id="LMr-LD-T9k"/>
                         <outlet property="dailyForecastButton" destination="TyA-GH-y0Z" id="icZ-Kn-TQ7"/>
                         <outlet property="dailyForecastButtonBottomConstraint" destination="Bbt-84-FHc" id="Rde-4w-sbJ"/>
-                        <outlet property="feelsLikeLable" destination="as9-NZ-Qkr" id="du5-Dq-kD5"/>
+                        <outlet property="feelsLikeLabel" destination="as9-NZ-Qkr" id="du5-Dq-kD5"/>
                         <outlet property="findCityTF" destination="L0Z-ax-Ww1" id="dk6-Ts-2h4"/>
                         <outlet property="forecastDayCollection" destination="bnr-sF-95J" id="5Nh-hn-sWt"/>
                         <outlet property="forecastDayHoursCollection" destination="iiD-h2-BlU" id="FNd-I6-a1I"/>
                         <outlet property="forecastForFiveDaysButton" destination="uwk-TE-Q5d" id="cyE-A9-aE9"/>
                         <outlet property="forecastForFiveDaysButtonConstraintForHideOrNot" destination="9VU-kO-jOh" id="2pc-IY-D8R"/>
-                        <outlet property="imageForTempLable" destination="aNZ-Y1-0el" id="vma-r5-wx7"/>
-                        <outlet property="leftConstrainOutlet" destination="EVd-sW-Zuv" id="CWL-yc-816"/>
+                        <outlet property="imageForTempLabel" destination="aNZ-Y1-0el" id="vma-r5-wx7"/>
+                        <outlet property="leftConstraintOutlet" destination="EVd-sW-Zuv" id="CWL-yc-816"/>
                         <outlet property="myCityLocation" destination="b9C-fq-Slr" id="qIv-5i-Z2C"/>
-                        <outlet property="noInternetConnectionLable" destination="gWy-Fe-Cq5" id="2Db-3U-ePy"/>
-                        <outlet property="presureLable" destination="Aam-kt-EUA" id="Szm-RD-aiK"/>
-                        <outlet property="tempLable" destination="m5n-xl-1hU" id="N8T-rA-oSD"/>
-                        <outlet property="timeLableCurent" destination="aVk-TS-pxH" id="luM-VH-Xbo"/>
-                        <outlet property="timeLableDate" destination="fQO-1P-GZL" id="6P8-dJ-N2V"/>
+                        <outlet property="noInternetConnectionLabel" destination="gWy-Fe-Cq5" id="2Db-3U-ePy"/>
+                        <outlet property="presureLabel" destination="Aam-kt-EUA" id="Szm-RD-aiK"/>
+                        <outlet property="tempLabel" destination="m5n-xl-1hU" id="N8T-rA-oSD"/>
+                        <outlet property="timeLabelCurrent" destination="aVk-TS-pxH" id="luM-VH-Xbo"/>
+                        <outlet property="timeLabelDate" destination="fQO-1P-GZL" id="6P8-dJ-N2V"/>
                         <outlet property="viewForCancel" destination="N5f-Ic-84d" id="vJX-xF-l3I"/>
                         <outlet property="viewForChangeCity" destination="ybF-B1-lwA" id="0M7-EG-Zhf"/>
                         <outlet property="visualBlurEffect" destination="BxQ-MQ-V9o" id="IGP-Fq-FlW"/>
-                        <outlet property="windLable" destination="tO4-Kc-QDg" id="IiE-m9-vup"/>
+                        <outlet property="windLabel" destination="tO4-Kc-QDg" id="IiE-m9-vup"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -501,7 +501,7 @@
     </scenes>
     <resources>
         <image name="diamond.bottomhalf.filled" catalog="system" width="128" height="124"/>
-        <image name="diamond.tophalf.filled" catalog="system" width="128" height="124"/>
+        <image name="diamond.tophalf.filled" catalog="system" width="32" height="32"/>
         <image name="magnifyingglass" catalog="system" width="128" height="117"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

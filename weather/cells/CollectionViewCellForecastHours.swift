@@ -8,6 +8,7 @@
 import UIKit
 
 class CollectionViewCellForecastHours: UICollectionViewCell {
+    
     var network = WorkWithNetwork()
     var time: String = "загрузка"
     var temp: Double = 0
@@ -18,14 +19,14 @@ class CollectionViewCellForecastHours: UICollectionViewCell {
         loadImage()
     }
     
-    @IBOutlet weak var timeLable: UILabel!
-    @IBOutlet weak var tempLable: UILabel!
+    @IBOutlet weak var timeLabel: UILabel!
+    @IBOutlet weak var tempLabel: UILabel!
     @IBOutlet weak var iconImage: UIImageView!
     
     func loadViewCell() {
         loadImage()
-        self.timeLable.text = convertDateToString()
-        self.tempLable.text = "\(temp) °C"
+        self.timeLabel.text = convertDateToString()
+        self.tempLabel.text = "\(temp) °C"
     }
     
     func convertDateToString() -> String {
@@ -37,15 +38,12 @@ class CollectionViewCellForecastHours: UICollectionViewCell {
         return newString
     }
     
-    
-    
     func loadValueCell(objectCell: Hours) {
         time = objectCell.time
         temp = objectCell.tempC
         icon = objectCell.condition.icon
         loadViewCell()
     }
-    
     
     func loadImage() {
         network.loadImage(urlForImage: icon) { image in
