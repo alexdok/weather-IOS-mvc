@@ -8,8 +8,7 @@
 import Foundation
 
 
-class ObjectWeAreWorkingWith {
-    
+class ObjectWeatherData {
     
     var arrayOfCellsDays:[ForecastDayArray] = []
     var arrayOfCellsHours:[Hours] = []
@@ -25,10 +24,6 @@ class ObjectWeAreWorkingWith {
     var localTime: String = ""
     var lastUpdateTime: String = ""
     
-    
     let key = "57412865e5694920b65102314220712"
     var citys:[String] = SaveSettingsManager.shared.loadCitysTable() //["Moscow", "London", "Voronezh", "Minsk", "Kiev"]
-    
-    
-
 }

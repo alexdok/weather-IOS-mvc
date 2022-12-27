@@ -3,7 +3,7 @@
 import UIKit
 import CoreLocation
 
-enum FormateForLableTime {
+enum FormateForLabelTime {
     case date
     case time
 }
@@ -14,93 +14,38 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     var feelsLikeLableText = "Feels Like: "
     var windLableText = "Wind: "
     var presureLableText = "Presure: "
-    
-    var curentData = ObjectWeAreWorkingWith()
+    var currentData = ObjectWeatherData()
     var workWithAPI = WorkWithNetwork()
-    let spiner = ActivityIndicator()
-
-    
+    let spinner = ActivityIndicator()
     
     @IBOutlet weak var forecastDayCollection: UICollectionView!
     @IBOutlet weak var forecastDayHoursCollection: UICollectionView!
-    
-    var requestDone = 0 {
-        didSet {
-            DispatchQueue.main.async {
-                self.cityLable.text = self.curentData.city.localized()
-                SaveSettingsManager.shared.saveCurentCity(curentCity: self.curentData.city)
-                self.tempLable.text = " \(self.curentData.temp)°C"
-                self.feelsLikeLable.text = self.feelsLikeLableText.localized() + "\(self.curentData.tempFeelsLike)°C"
-                self.windLable.text = self.windLableText.localized() + "\(self.curentData.windMph) MPH"
-                self.presureLable.text = self.presureLableText.localized() + "\(self.curentData.presure) inHg"
-                self.timeLableDate.text = self.convertDateToString(format: .date)
-                self.timeLableCurent.text = self.convertDateToString(format: .time)
-                self.loadImage()
-                self.forecastDayCollection.reloadData()
-                self.forecastDayHoursCollection.reloadData()
-                self.spiner.hideLoading()
-            }
-            DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 1 ) {
-                self.forecastDayHoursCollection.reloadData()
-                self.forecastDayCollection.reloadData()
-            }
-        }
-    }
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        self.spiner.showLoading(onView: self.view)
-        
-        locationManager.delegate = self
-        locationManager.desiredAccuracy = kCLLocationAccuracyKilometer
-        locationManager.requestAlwaysAuthorization()
-        locationManager.startUpdatingLocation()
-        
-        
-        self.forecastDayCollection.dataSource = self
-        self.forecastDayCollection.delegate = self
-        
-        self.forecastDayHoursCollection.dataSource = self
-        self.forecastDayHoursCollection.delegate = self
-        
-        
-        background.image = UIImage(named: "background")
-        background.addParalaxEffect()
-        let recognizer = UITapGestureRecognizer(target: self, action: #selector(tapForReturn))
-        viewForCancel.addGestureRecognizer(recognizer)
-    }
-    
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        self.connectWithServer()
-    }
-    
     @IBOutlet weak var myCityLocation: UIButton!
-    @IBOutlet weak var timeLableCurent: UILabel!
+    @IBOutlet weak var timeLabelCurrent: UILabel!
     @IBOutlet weak var forecastForFiveDaysButtonConstraintForHideOrNot: NSLayoutConstraint!
-    @IBOutlet weak var feelsLikeLable: UILabel!
-    @IBOutlet weak var presureLable: UILabel!
-    @IBOutlet weak var windLable: UILabel!
+    @IBOutlet weak var feelsLikeLabel: UILabel!
+    @IBOutlet weak var presureLabel: UILabel!
+    @IBOutlet weak var windLabel: UILabel!
     @IBOutlet weak var forecastForFiveDaysButton: UIButton!
     @IBOutlet weak var containerForColectionViewHours: UIView!
     @IBOutlet weak var dailyForecastButtonBottomConstraint: NSLayoutConstraint!
     @IBOutlet weak var dailyForecastButton: UIButton!
-    @IBOutlet weak var noInternetConnectionLable: UILabel!
-    @IBOutlet weak var timeLableDate: UILabel!
+    @IBOutlet weak var noInternetConnectionLabel: UILabel!
+    @IBOutlet weak var timeLabelDate: UILabel!
     @IBOutlet weak var background: UIImageView!
     @IBOutlet weak var changeCityTable: UITableView!
-    @IBOutlet weak var leftConstrainOutlet: NSLayoutConstraint!
+    @IBOutlet weak var leftConstraintOutlet: NSLayoutConstraint!
     @IBOutlet weak var containerForCollectionView: UIView!
-    @IBOutlet weak var cityLable: UILabel!
-    @IBOutlet weak var tempLable: UILabel!
-    @IBOutlet weak var imageForTempLable: UIImageView!
+    @IBOutlet weak var cityLabel: UILabel!
+    @IBOutlet weak var tempLabel: UILabel!
+    @IBOutlet weak var imageForTempLabel: UIImageView!
     @IBOutlet weak var findCityTF: UITextField!
     @IBOutlet weak var visualBlurEffect: UIVisualEffectView!
     @IBOutlet weak var viewForChangeCity: UIView!
     @IBOutlet weak var viewForCancel: UIView!
     
     @IBAction func changeCityButton(_ sender: UIButton) {
-        leftConstrainOutlet.constant += viewForChangeCity.bounds.width
+        leftConstraintOutlet.constant += viewForChangeCity.bounds.width
         viewForChangeCity.isHidden = false
         viewForCancel.isHidden = false
         UIView.animate(withDuration: 0.3) {
@@ -109,13 +54,13 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         }
     }
     
-    @IBAction func myCityLocationButtonPrassed(_ sender: UIButton) {
+    @IBAction func myCityLocationButtonPressed(_ sender: UIButton) {
         workWithAPI.firstStart = true
         returnAnimate()
         connectWithServer()
     }
     
-    @IBAction func dailyForecastHideOrNotButtonPrassed(_ sender: UIButton) {
+    @IBAction func dailyForecastHideOrNotButtonPressed(_ sender: UIButton) {
         sender.isSelected = !sender.isSelected
         if sender.isSelected == true {
             forecastForFiveDaysButtonConstraintForHideOrNot.constant = containerForColectionViewHours.bounds.height - 15
@@ -139,16 +84,16 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         }
     }
     
-    @IBAction func forecastForFiveDaysHideOrNotButtonPrassed(_ sender: UIButton) {
+    @IBAction func forecastForFiveDaysHideOrNotButtonPressed(_ sender: UIButton) {
         sender.isSelected = !sender.isSelected
         if sender.isSelected {
-            if curentData.arrayOfCellsDays.count < 5 {
+            if currentData.arrayOfCellsDays.count < 5 {
                 createAlertTroubldeDaysForecast()
             }
             UIView.animate(withDuration: 0.3) {
-                self.windLable.alpha = 0
-                self.presureLable.alpha = 0
-                self.feelsLikeLable.alpha = 0
+                self.windLabel.alpha = 0
+                self.presureLabel.alpha = 0
+                self.feelsLikeLabel.alpha = 0
                 self.forecastDayCollection.alpha = 0
             } completion: { _ in
                 UIView.animate(withDuration: 0.3) {
@@ -161,9 +106,9 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
                 self.forecastDayCollection.alpha = 0
             } completion: { _ in
                 UIView.animate(withDuration: 0.3) {
-                    self.windLable.alpha = 1
-                    self.presureLable.alpha = 1
-                    self.feelsLikeLable.alpha = 1
+                    self.windLabel.alpha = 1
+                    self.presureLabel.alpha = 1
+                    self.feelsLikeLabel.alpha = 1
                     self.forecastDayCollection.isHidden = true
                 }
             }
@@ -174,52 +119,97 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         isThisARealCity()
         addNewCity()
         if findCityTF.text == "" {
-            self.spiner.hideLoading()
+            self.spinner.hideLoading()
         }
         findCityTF.text = nil
     }
     
     @IBAction func tapForReturn() {
         returnAnimate()
-        self.spiner.hideLoading()
+        self.spinner.hideLoading()
     }
-    
     
     func connectWithServer() {
         workWithAPI.sendTestConnect { connect in
             if connect != true {
                 DispatchQueue.main.async {
                     self.visualBlurEffect.isHidden = false
-                    self.noInternetConnectionLable.isHidden = false
+                    self.noInternetConnectionLabel.isHidden = false
                 }
             } else {
                 self.sendRequestForCurentTemp()
-                if self.curentData.error == 2008 {
+                if self.currentData.error == 2008 {
                     self.visualBlurEffect.isHidden = false
-                    self.noInternetConnectionLable.text = "API KEY not working"
-                    self.noInternetConnectionLable.isHidden = false
+                    self.noInternetConnectionLabel.text = "API KEY not working"
+                    self.noInternetConnectionLabel.isHidden = false
                 }
             }
         }
     }
     
+    var requestDone = 0 {
+        didSet {
+            DispatchQueue.main.async {
+                self.cityLabel.text = self.currentData.city.localized()
+                SaveSettingsManager.shared.saveCurrentCity(curentCity: self.currentData.city)
+                self.tempLabel.text = " \(self.currentData.temp)°C"
+                self.feelsLikeLabel.text = self.feelsLikeLableText.localized() + "\(self.currentData.tempFeelsLike)°C"
+                self.windLabel.text = self.windLableText.localized() + "\(self.currentData.windMph) MPH"
+                self.presureLabel.text = self.presureLableText.localized() + "\(self.currentData.presure) inHg"
+                self.timeLabelDate.text = self.convertDateToString(format: .date)
+                self.timeLabelCurrent.text = self.convertDateToString(format: .time)
+                self.loadImage()
+                self.forecastDayCollection.reloadData()
+                self.forecastDayHoursCollection.reloadData()
+                self.spinner.hideLoading()
+            }
+            DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 1 ) {
+                self.forecastDayHoursCollection.reloadData()
+                self.forecastDayCollection.reloadData()
+            }
+        }
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        self.spinner.showLoading(onView: self.view)
+        locationManager.delegate = self
+        locationManager.desiredAccuracy = kCLLocationAccuracyKilometer
+        locationManager.requestAlwaysAuthorization()
+        locationManager.startUpdatingLocation()
+        self.forecastDayCollection.dataSource = self
+        self.forecastDayCollection.delegate = self
+        self.forecastDayHoursCollection.dataSource = self
+        self.forecastDayHoursCollection.delegate = self
+        background.image = UIImage(named: "background")
+        background.addParalaxEffect()
+        let recognizer = UITapGestureRecognizer(target: self, action: #selector(tapForReturn))
+        viewForCancel.addGestureRecognizer(recognizer)
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        //        viewModel.sendRequestForCurentTemp()
+        self.connectWithServer()
+    }
+    
     func locationManager(_ manager: CLLocationManager,didChangeAuthorization status: CLAuthorizationStatus) {
         guard let location: CLLocationCoordinate2D = manager.location?.coordinate else {return}
-        workWithAPI.curentLatitude = location.latitude
-        workWithAPI.curentLongitude = location.longitude
-//        connectWithServer()
+        workWithAPI.currentLatitude = location.latitude
+        workWithAPI.currentLongitude = location.longitude
+        //        connectWithServer()
     }
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         let location: CLLocationCoordinate2D = manager.location!.coordinate
-        workWithAPI.curentLatitude = location.latitude
-        workWithAPI.curentLongitude = location.longitude
+        workWithAPI.currentLatitude = location.latitude
+        workWithAPI.currentLongitude = location.longitude
     }
     
     func isThisARealCity() {
         addNewCity()
-        workWithAPI.sendRequestForCurentTemp { request in
-            self.curentData = request
+        workWithAPI.sendRequestForCurrentTemp { request in
+            self.currentData = request
             if request.error != nil {
                 DispatchQueue.main.async {
                     self.createAlertNoCity()
@@ -228,11 +218,11 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
             else {
                 DispatchQueue.main.async {
                     self.returnAnimate()
-                    if self.curentData.citys.contains(self.curentData.city) {
+                    if self.currentData.citys.contains(self.currentData.city) {
                     } else {
-                        self.curentData.citys.append(self.curentData.city)
+                        self.currentData.citys.append(self.currentData.city)
                     }
-                    SaveSettingsManager.shared.saveCitysTable(arrayCitys: self.curentData.citys)
+                    SaveSettingsManager.shared.saveCitysTable(arrayCitys: self.currentData.citys)
                     self.changeCityTable.reloadData()
                     self.requestDone += 1
                 }
@@ -241,8 +231,8 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     }
     
     func sendRequestForCurentTemp() {
-        workWithAPI.sendRequestForCurentTemp { request in
-            self.curentData = request
+        workWithAPI.sendRequestForCurrentTemp { request in
+            self.currentData = request
             self.requestDone += 1
         }
     }
@@ -251,7 +241,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         let alert = UIAlertController.init(title: "WARNING!", message: "City not found!", preferredStyle: .alert)
         let okAktion = UIAlertAction.init(title: "OK", style: .cancel, handler: nil)
         alert.addAction(okAktion)
-        self.present(alert, animated: true, completion: self.spiner.hideLoading )
+        self.present(alert, animated: true, completion: self.spinner.hideLoading )
     }
     
     func createAlertTroubldeDaysForecast() {
@@ -262,8 +252,8 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     }
     
     func returnAnimate() {
-        leftConstrainOutlet.constant -= viewForChangeCity.bounds.width
-        self.spiner.showLoading(onView: self.view)
+        leftConstraintOutlet.constant -= viewForChangeCity.bounds.width
+        self.spinner.showLoading(onView: self.view)
         viewForCancel.isHidden = true
         UIView.animate(withDuration: 0.3) {
             self.view.layoutIfNeeded()
@@ -273,31 +263,29 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         }
     }
     
-    func convertDateToString(format: FormateForLableTime) -> String {
+    func convertDateToString(format: FormateForLabelTime) -> String {
         switch format {
         case .date :
             let dateFormatter = DateFormatter()
             dateFormatter.dateFormat = "yyyy-MM-dd HH:mm"
-            guard let convertDate = dateFormatter.date(from: self.curentData.localTime) else { return "error" }
+            guard let convertDate = dateFormatter.date(from: self.currentData.localTime) else { return "error" }
             dateFormatter.dateFormat = "dd.MMMM.yyyy"
             let newString = dateFormatter.string(from: convertDate)
             return newString
         case .time :
             let dateFormatter = DateFormatter()
             dateFormatter.dateFormat = "yyyy-MM-dd HH:mm"
-            guard let convertDate = dateFormatter.date(from: self.curentData.localTime) else { return "error" }
+            guard let convertDate = dateFormatter.date(from: self.currentData.localTime) else { return "error" }
             dateFormatter.dateFormat = "HH:mm"
             let newString = dateFormatter.string(from: convertDate)
             return newString
         }
     }
     
-
-    
     func loadImage() {
-        workWithAPI.loadImage(urlForImage: self.curentData.urlForCurentImage) { image in
+        workWithAPI.loadImage(urlForImage: self.currentData.urlForCurentImage) { image in
             DispatchQueue.main.async {
-                self.imageForTempLable.image = image
+                self.imageForTempLabel.image = image
             }
         }
     }

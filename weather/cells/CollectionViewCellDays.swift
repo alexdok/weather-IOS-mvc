@@ -8,13 +8,14 @@
 import UIKit
 
 class CollectionViewCellDays: UICollectionViewCell {
+    
     var network = WorkWithNetwork()
     var date: String = "загрузка"
     var temp: Double = 0
     var icon: String = "загрузка"
     
-    @IBOutlet weak var dateLable: UILabel!
-    @IBOutlet weak var tempLable: UILabel!
+    @IBOutlet weak var dateLabel: UILabel!
+    @IBOutlet weak var tempLabel: UILabel!
     @IBOutlet weak var iconImage: UIImageView!
     
     override func awakeFromNib() {
@@ -23,8 +24,8 @@ class CollectionViewCellDays: UICollectionViewCell {
     
     func loadVieCell() {
         loadImage()
-        self.dateLable.text = "\(convertDateToString())"
-        self.tempLable.text = "\(temp) °C"
+        self.dateLabel.text = "\(convertDateToString())"
+        self.tempLabel.text = "\(temp) °C"
     }
     
     func loadValueCell(objectCell: ForecastDayArray) {

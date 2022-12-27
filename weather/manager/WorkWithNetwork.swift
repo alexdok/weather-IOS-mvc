@@ -10,16 +10,16 @@ import UIKit
 import CoreLocation
 
 class WorkWithNetwork {
- 
-    var curentDataNetwork = Manager.shared.getObjectJsone()
+    
+    var currentDataNetwork = ManagerGetObjectWeather.shared.getObjectJsone()
     var city = SaveSettingsManager.shared.loadLastCity()
     var connect = false
     var firstStart = true
-    var curentLatitude: CLLocationDegrees?
-    var curentLongitude: CLLocationDegrees?
-
-    func sendTestConnect(completion: @escaping (Bool) -> ())   {
-        guard let url = URL(string: "https://api.weatherapi.com/v1/current.json?aqi=no&key=\(curentDataNetwork.key)&q=moscow") else {
+    var currentLatitude: CLLocationDegrees?
+    var currentLongitude: CLLocationDegrees?
+    
+    func sendTestConnect(completion: @escaping (Bool) -> ()) {
+        guard let url = URL(string: "https://api.weatherapi.com/v1/current.json?aqi=no&key=\(currentDataNetwork.key)&q=moscow") else {
             completion(false)
             return
         }
@@ -36,39 +36,37 @@ class WorkWithNetwork {
         task.resume()
     }
     
-    func sendRequestForCurentTemp(completion: @escaping (ObjectWeAreWorkingWith) -> ()) {
+    func sendRequestForCurrentTemp(completion: @escaping (ObjectWeatherData) -> ()) {
         if city == "" {
             city = "New York"
         }
         var url = ""
-        if firstStart == true && curentLatitude != nil && curentLongitude != nil {
-            url = "https://api.weatherapi.com/v1/forecast.json?q="+String(curentLatitude!)+","+String(curentLongitude!)+"&days=6&aqi=no&alerts=no"
+        if firstStart == true && currentLatitude != nil && currentLongitude != nil {
+            url = "https://api.weatherapi.com/v1/forecast.json?q=" + String(currentLatitude!) + "," + String(currentLongitude!) + "&days=6&aqi=no&alerts=no"
             firstStart = false
         } else {
-            url = "https://api.weatherapi.com/v1/forecast.json?q="+city.convertStringDellSpace()+"&days=6&aqi=no&alerts=no"
+            url = "https://api.weatherapi.com/v1/forecast.json?q=" + city.convertStringDellSpace() + "&days=6&aqi=no&alerts=no"
         }
-        
         guard let url = URL(string: url) else {
-            curentDataNetwork.error = 999
-            completion(self.curentDataNetwork)
+            currentDataNetwork.error = 999
+            completion(self.currentDataNetwork)
             return
         }
         var request = URLRequest(url: url)
         request.httpMethod = "GET"
-        request.addValue("\(curentDataNetwork.key)", forHTTPHeaderField: "key")
-        
+        request.addValue("\(currentDataNetwork.key)", forHTTPHeaderField: "key")
         let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
             if error == nil, let data = data {
                 do {
-                    let object = try JSONDecoder().decode(JsonWeatherDecoder.self, from: data)
-                    self.curentDataNetwork.error = nil
+                    let object = try JSONDecoder().decode(JsonWeather.self, from: data)
+                    self.currentDataNetwork.error = nil
                     if let mabyError = object.error?.code {
-                        self.curentDataNetwork.error = mabyError
-                        completion(self.curentDataNetwork)
+                        self.currentDataNetwork.error = mabyError
+                        completion(self.currentDataNetwork)
                         return
                     }
                     self.createObjectFromJson(object: object)
-                    completion(self.curentDataNetwork)
+                    completion(self.currentDataNetwork)
                 } catch {
                     print(error)
                 }
@@ -77,39 +75,38 @@ class WorkWithNetwork {
         task.resume()
     }
     
-    func createObjectFromJson(object:JsonWeatherDecoder ) {
+    func createObjectFromJson(object:JsonWeather ) {
         guard var cellDays = object.forecast?.forecastday else { return }
         cellDays.removeFirst()
-        self.curentDataNetwork.arrayOfCellsDays = cellDays
+        self.currentDataNetwork.arrayOfCellsDays = cellDays
         guard let cellHours = object.forecast?.forecastday.first?.hour else { return }
-        self.curentDataNetwork.arrayOfCellsHours = cellHours
+        self.currentDataNetwork.arrayOfCellsHours = cellHours
         guard let cellHoursNext = object.forecast?.forecastday[1].hour else { return }
-        self.curentDataNetwork.arrayOfCellsHoursNextDay = cellHoursNext
-        self.curentDataNetwork.localTime = object.location?.localtime ?? " "
-        self.curentDataNetwork.lastUpdateTime = object.current?.lastUpdated ?? " "
+        self.currentDataNetwork.arrayOfCellsHoursNextDay = cellHoursNext
+        self.currentDataNetwork.localTime = object.location?.localtime ?? " "
+        self.currentDataNetwork.lastUpdateTime = object.current?.lastUpdated ?? " "
         self.convertAraayOfCellHoursForArrayCurentHours()
-        self.curentDataNetwork.temp = object.current?.tempC ?? 0
-        self.curentDataNetwork.presure = object.current?.pressureIn ?? 0
-        self.curentDataNetwork.tempFeelsLike = object.current?.feelslikeC ?? 0
-        self.curentDataNetwork.windMph = object.current?.windMph ?? 0
-        self.curentDataNetwork.city = object.location?.name ?? " "
-        self.curentDataNetwork.urlForCurentImage = object.current?.condition.icon ?? " "
+        self.currentDataNetwork.temp = object.current?.tempC ?? 0
+        self.currentDataNetwork.presure = object.current?.pressureIn ?? 0
+        self.currentDataNetwork.tempFeelsLike = object.current?.feelslikeC ?? 0
+        self.currentDataNetwork.windMph = object.current?.windMph ?? 0
+        self.currentDataNetwork.city = object.location?.name ?? " "
+        self.currentDataNetwork.urlForCurentImage = object.current?.condition.icon ?? " "
     }
     
     func convertAraayOfCellHoursForArrayCurentHours() {
-        curentDataNetwork.arrayCurentHours.removeAll()
-        for hour in curentDataNetwork.arrayOfCellsHours {
-            if hour.time > curentDataNetwork.lastUpdateTime {
-                curentDataNetwork.arrayCurentHours.append(hour)
+        currentDataNetwork.arrayCurentHours.removeAll()
+        for hour in currentDataNetwork.arrayOfCellsHours {
+            if hour.time > currentDataNetwork.lastUpdateTime {
+                currentDataNetwork.arrayCurentHours.append(hour)
             }
         }
-        for hour in curentDataNetwork.arrayOfCellsHoursNextDay{
-            if convertDateToString(string: hour.time) < convertDateToString(string: curentDataNetwork.lastUpdateTime) {
-                curentDataNetwork.arrayCurentHours.append(hour)
+        for hour in currentDataNetwork.arrayOfCellsHoursNextDay{
+            if convertDateToString(string: hour.time) < convertDateToString(string: currentDataNetwork.lastUpdateTime) {
+                currentDataNetwork.arrayCurentHours.append(hour)
             }
         }
     }
-    
     
     func convertDateToString(string: String) -> String {
         let dateFormatter = DateFormatter()
@@ -119,8 +116,6 @@ class WorkWithNetwork {
         let newString = dateFormatter.string(from: convertDate)
         return newString
     }
-    
-    
     
     func loadImage(urlForImage: String, completion: @escaping (UIImage) -> ()) {
         let urlObj = "https:\(urlForImage)"
