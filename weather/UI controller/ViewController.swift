@@ -11,9 +11,9 @@ enum FormateForLabelTime {
 class ViewController: UIViewController, CLLocationManagerDelegate {
     
     var locationManager = CLLocationManager()
-    var feelsLikeLableText = "Feels Like: "
-    var windLableText = "Wind: "
-    var presureLableText = "Presure: "
+    var feelsLikeLabelText = "Feels Like: "
+    var windLabelText = "Wind: "
+    var presureLabelText = "Presure: "
     var currentData = ObjectWeatherData()
     var workWithAPI = WorkWithNetwork()
     let spinner = ActivityIndicator()
@@ -153,9 +153,9 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
                 self.cityLabel.text = self.currentData.city.localized()
                 SaveSettingsManager.shared.saveCurrentCity(curentCity: self.currentData.city)
                 self.tempLabel.text = " \(self.currentData.temp)°C"
-                self.feelsLikeLabel.text = self.feelsLikeLableText.localized() + "\(self.currentData.tempFeelsLike)°C"
-                self.windLabel.text = self.windLableText.localized() + "\(self.currentData.windMph) MPH"
-                self.presureLabel.text = self.presureLableText.localized() + "\(self.currentData.presure) inHg"
+                self.feelsLikeLabel.text = self.feelsLikeLabelText.localized() + "\(self.currentData.tempFeelsLike)°C"
+                self.windLabel.text = self.windLabelText.localized() + "\(self.currentData.windMph) MPH"
+                self.presureLabel.text = self.presureLabelText.localized() + "\(self.currentData.presure) inHg"
                 self.timeLabelDate.text = self.convertDateToString(format: .date)
                 self.timeLabelCurrent.text = self.convertDateToString(format: .time)
                 self.loadImage()
