@@ -95,7 +95,7 @@
 			children = (
 				90EEA850291A981B0071DC99 /* supporting files */,
 				90E4DAC129027F6C00AF905D /* UI controller */,
-				90E4DABF29027F1F00AF905D /* manager */,
+				90E4DABF29027F1F00AF905D /* managers */,
 				90E4DAC029027F5200AF905D /* model Json */,
 				90E4DABD29027EE900AF905D /* cells */,
 				90E4DABE29027F0100AF905D /* extansions */,
@@ -125,7 +125,7 @@
 			path = extansions;
 			sourceTree = "<group>";
 		};
-		90E4DABF29027F1F00AF905D /* manager */ = {
+		90E4DABF29027F1F00AF905D /* managers */ = {
 			isa = PBXGroup;
 			children = (
 				90EEA84C291941710071DC99 /* WorkWithNetwork.swift */,
@@ -133,7 +133,7 @@
 				90D1C6E028FC3BA600F2EA88 /* ObjectWeatherData.swift */,
 				900C95FF2923CB5100930697 /* SaveSettingsManager.swift */,
 			);
-			path = manager;
+			path = managers;
 			sourceTree = "<group>";
 		};
 		90E4DAC029027F5200AF905D /* model Json */ = {

@@ -198,12 +198,14 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         workWithAPI.currentLatitude = location.latitude
         workWithAPI.currentLongitude = location.longitude
         //        connectWithServer()
+        print(location.latitude)
     }
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         let location: CLLocationCoordinate2D = manager.location!.coordinate
         workWithAPI.currentLatitude = location.latitude
         workWithAPI.currentLongitude = location.longitude
+        print(location.latitude)
     }
     
     func isThisARealCity() {

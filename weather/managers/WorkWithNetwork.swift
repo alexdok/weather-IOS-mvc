@@ -129,7 +129,18 @@ class WorkWithNetwork {
         }
         task.resume()
     }
-}
+    
+//    func loadImage(urlForImage: String, completion: @escaping (UIImage) -> ()) {
+//        let urlObj = "https:\(urlForImage)"
+//        guard let urlImage = URL(string: urlObj) else { return }
+//        guard let imageData = try? Data(contentsOf: urlImage) else {return }
+//                DispatchQueue.main.async {
+//                    guard let image = UIImage(data: imageData) else { return }
+//                    completion(image)
+//                }
+//        }
+    }
+
 
 
 
