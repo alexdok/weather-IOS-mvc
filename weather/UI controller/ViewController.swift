@@ -11,9 +11,9 @@ enum FormateForLabelTime {
 class ViewController: UIViewController, CLLocationManagerDelegate {
     
     var locationManager = CLLocationManager()
-    var feelsLikeLableText = "Feels Like: "
-    var windLableText = "Wind: "
-    var presureLableText = "Presure: "
+    var feelsLikeLabelText = "Feels Like: "
+    var windLabelText = "Wind: "
+    var presureLabelText = "Presure: "
     var currentData = ObjectWeatherData()
     var workWithAPI = WorkWithNetwork()
     let spinner = ActivityIndicator()
